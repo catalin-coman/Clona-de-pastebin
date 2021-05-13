@@ -1,0 +1,15 @@
+{% extends 'textbin/layout.html' %}
+{% block title %}Create a new User{% endblock title %}
+
+{% block content %}
+    <h1 class="adduser-heading">Add a new user to the database</h1>
+    <div class="adduser-form">
+        <form action="" method="POST">
+            {% csrf_token %}
+            {% include 'textbin/form_template.html' %}
+
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+
+{% endblock content %}

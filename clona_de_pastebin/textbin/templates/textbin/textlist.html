@@ -1,0 +1,51 @@
+{% extends 'textbin/layout.html' %}
+
+{% block title %}
+{{ user.name }}'s texts
+{% endblock title %}
+
+{% block content %}
+
+<h1 class="textlist-header">{{ user.name }}'s texts list</h1>
+
+<div class="accordion" id="accordionExample">
+    {% for text in user.text_set.all %}
+
+    <div class="accordion-item">
+        <h2 class="accordion-header" id="headingOne">
+            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne"
+                aria-expanded="true" aria-controls="collapseOne">
+                {{ text.title }}
+            </button>
+        </h2>
+    </div>
+    <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
+        data-bs-parent="#accordionExample">
+        <div class="btn-toolbar mb-3" role="toolbar" aria-label="Toolbar with button groups">
+            <div class="btn-group me-2" role="group" aria-label="First group">
+                <!-- edit button -->
+                <button type="button" class="btn btn-outline-secondary">
+                    <a href="{% url 'textbin:text-edit' text.id %}">
+                        <img src="https://img.icons8.com/ultraviolet/20/4a90e2/edit.png" />
+                    </a>
+                </button>
+
+                <!-- delete button -->
+                <form action="{% url 'textbin:text-delete' text.id %}" method="POST">
+                    {% csrf_token %}
+                    <button type="submit" class="btn btn-outline-secondary">
+                        <img src="https://img.icons8.com/fluent-systems-filled/20/4a90e2/delete-forever.png" />
+                    </button>
+                </form>
+            </div>
+        </div>
+        <div class="accordion-body">
+            {{ text.content }}
+        </div>
+    </div>
+
+    {% endfor %}
+
+</div>
+
+{% endblock content %}

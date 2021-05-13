@@ -1,0 +1,17 @@
+{% extends 'textbin/layout.html' %}
+{% block title %}Textbin{% endblock title %}
+
+
+{% block content %}
+    <h1 class="homepage-header">List of registered users on the app</h1>
+    <ul class="list-group">
+        {% for user in all_users %}
+
+        <li class="list-group-item">
+            <a href="{% url 'textbin:userlist' user.id %}">{{ user.name }}</a>
+        </li>
+
+        {% endfor %}
+    </ul>
+
+{% endblock content %}

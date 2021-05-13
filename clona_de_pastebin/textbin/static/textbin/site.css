@@ -1,0 +1,15 @@
+
+.homepage-header, .textlist-header, .add_text-header, .adduser-heading, .addtext-heading {
+    padding-top: 2%;
+    text-align: center;
+}
+
+
+.homepage-loginform, .list-group, .accordion, .adduser-form, .addtext-form {
+    width: 500px;
+    position: absolute;
+    left: 50%;
+    margin-left: -250px;
+    padding-top: 3%;
+    height: auto;
+}

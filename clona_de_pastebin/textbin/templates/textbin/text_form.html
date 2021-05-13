@@ -1,0 +1,26 @@
+{% extends 'textbin/layout.html' %}
+{% block title %}Create a new Text{% endblock title %}
+
+{% block content %}
+    <h1 class="addtext-heading">Create a new text</h1>
+    <div class="addtext-form">
+        <form action="" method="POST">
+            {% csrf_token %}
+            
+            {% for field in form %}
+    
+                <div class="input-group mb-3">
+                    <span class="input-group-text" id="basic-addon1">{{ field.label_tag }}</span>
+                    {{ field }}
+                </div>
+            
+            {% endfor %}
+
+            <button type="submit" class="btn btn-primary">Submit Form</button>
+        </form>
+    </div>
+
+    
+    
+
+{% endblock content %}
