@@ -1,4 +1,3 @@
-from django.conf.urls import url
 from .models import Text, User
 from django.views import generic
 from django.views.generic.edit import CreateView, UpdateView, DeleteView

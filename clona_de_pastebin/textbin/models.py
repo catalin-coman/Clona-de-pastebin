@@ -23,4 +23,4 @@ class Text(models.Model):
         return reverse('textbin:home')
 
     def __str__(self):
-        return self.title + self.content
+        return self.title + ' - ' + self.content
