@@ -8,7 +8,7 @@
         {% for user in all_users %}
 
         <li class="list-group-item">
-            <a href="{% url 'textbin:userlist' user.id %}">{{ user.name }}</a>
+            <a href="{% url 'textbin:textlist' user.id %}">{{ user.name }}</a>
         </li>
 
         {% endfor %}

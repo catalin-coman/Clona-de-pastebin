@@ -8,7 +8,7 @@ class User(models.Model):
     email = models.EmailField(max_length=100)
     
     def get_absolute_url(self):
-        return reverse('textbin:userlist', kwargs={'pk': self.pk})
+        return reverse('textbin:textlist', kwargs={'pk': self.pk})
 
     def __str__(self):
         return self.name

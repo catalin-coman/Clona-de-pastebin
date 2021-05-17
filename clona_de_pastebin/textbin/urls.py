@@ -9,7 +9,7 @@ urlpatterns = [
     path('', views.HomeView.as_view(), name='home'), 
 
     # textlist page
-    url(r'^(?P<pk>[0-9]+)/$', views.TextsView.as_view(), name='userlist'),
+    url(r'^(?P<pk>[0-9]+)/$', views.TextsView.as_view(), name='textlist'),
 
     #create user
     url(r'user/add/$', views.UserCreate.as_view(), name='user-add'),
